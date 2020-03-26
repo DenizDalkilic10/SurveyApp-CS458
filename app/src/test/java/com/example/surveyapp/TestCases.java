@@ -37,10 +37,10 @@ public class TestCases {
     public void testSurvey() {
 
         // Test case 1 - Successful Submission
-        driver.findElementById("name_field").sendKeys();
-        driver.findElementById("surname_field").sendKeys();
-        driver.findElementById("city_field").sendKeys();
-        driver.findElementById("occupation_field").sendKeys();
+        driver.findElementById("name_field").sendKeys("Sila");
+        driver.findElementById("surname_field").sendKeys("Inci");
+        driver.findElementById("city_field").sendKeys("Ankara");
+        driver.findElementById("occupation_field").sendKeys("Student");
         driver.findElementById("dateText").sendKeys();
         driver.findElementById("male").click();
         driver.findElementById("female").click();
@@ -49,10 +49,10 @@ public class TestCases {
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
         // Test case 2 - Failed Login: Empty name
-        driver.findElementById("name_field").sendKeys();
-        driver.findElementById("surname_field").sendKeys();
-        driver.findElementById("city_field").sendKeys();
-        driver.findElementById("occupation_field").sendKeys();
+        driver.findElementById("name_field").sendKeys("");
+        driver.findElementById("surname_field").sendKeys("Inci");
+        driver.findElementById("city_field").sendKeys("Ankara");
+        driver.findElementById("occupation_field").sendKeys("Student");
         driver.findElementById("dateText").sendKeys();
         driver.findElementById("male").click();
         driver.findElementById("female").click();
@@ -61,10 +61,10 @@ public class TestCases {
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
         // Test case 3 - Failed Login: Empty Surname
-        driver.findElementById("name_field").sendKeys();
-        driver.findElementById("surname_field").sendKeys();
-        driver.findElementById("city_field").sendKeys();
-        driver.findElementById("occupation_field").sendKeys();
+        driver.findElementById("name_field").sendKeys("Sila");
+        driver.findElementById("surname_field").sendKeys("");
+        driver.findElementById("city_field").sendKeys("Ankara");
+        driver.findElementById("occupation_field").sendKeys("Student");
         driver.findElementById("dateText").sendKeys();
         driver.findElementById("male").click();
         driver.findElementById("female").click();
@@ -72,11 +72,11 @@ public class TestCases {
         driver.findElementById("date_button").click();
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
-        // Test case 4 - Failed Login:
-        driver.findElementById("name_field").sendKeys();
-        driver.findElementById("surname_field").sendKeys();
-        driver.findElementById("city_field").sendKeys();
-        driver.findElementById("occupation_field").sendKeys();
+        // Test case 4 - Failed Login: Name should contain only letters
+        driver.findElementById("name_field").sendKeys("193983");
+        driver.findElementById("surname_field").sendKeys("Inci");
+        driver.findElementById("city_field").sendKeys("Ankara");
+        driver.findElementById("occupation_field").sendKeys("Student");
         driver.findElementById("dateText").sendKeys();
         driver.findElementById("male").click();
         driver.findElementById("female").click();
@@ -84,11 +84,11 @@ public class TestCases {
         driver.findElementById("date_button").click();
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
-        // Test case 5
-        driver.findElementById("name_field").sendKeys();
-        driver.findElementById("surname_field").sendKeys();
-        driver.findElementById("city_field").sendKeys();
-        driver.findElementById("occupation_field").sendKeys();
+        // Test case 5 - Failed Login: City should contain only english letters
+        driver.findElementById("name_field").sendKeys("Sila");
+        driver.findElementById("surname_field").sendKeys("Inci");
+        driver.findElementById("city_field").sendKeys("çankaya");
+        driver.findElementById("occupation_field").sendKeys("Student");
         driver.findElementById("dateText").sendKeys();
         driver.findElementById("male").click();
         driver.findElementById("female").click();
